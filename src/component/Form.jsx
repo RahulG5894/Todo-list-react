@@ -9,8 +9,10 @@ export default function Form({
   editTask,
   setEditTask,
 }) {
-  const updateTask = ({ title, id, completed }) => {
+  const updateTask = (title, id, completed) => {
     const newTask = tasks.map((item) => {
+      // Issue is here
+      console.log("I am called bro!!");
       return item.id === id ? { title, id, completed } : item;
     });
     setTasks(newTask);

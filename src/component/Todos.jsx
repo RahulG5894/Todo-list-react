@@ -21,6 +21,7 @@ export default function Todos({ tasks, setTasks, setEditTask }) {
       {tasks.map((item) => {
         return (
           <li key={item.id}>
+            <input type="checkbox" checked={item.completed ? true : false} />
             <input
               type="text"
               value={item.title}
@@ -37,7 +38,7 @@ export default function Todos({ tasks, setTasks, setEditTask }) {
               Edit
             </button>
             <button type="submit" onClick={() => handleComplete(item)}>
-              Complete
+              {item.completed ? "Re-do" : "Complete"}
             </button>
             <button type="submit" onClick={() => handleDelete(item)}>
               Delete
